@@ -1,4 +1,129 @@
+.wheelContainer .seg {
+  border-left: 32.35px solid transparent;
+  border-right: 32.35px solid transparent;
+  width: 0;
+  height: 0;
+  border-top-right-radius: 100% 5px;
+  border-top-left-radius: 100% 5px;
+  margin-left: 217.65px;
+  margin-top: 0;
+  position: fixed;
+  transform-origin: 50% 100%;
+  z-index: 1; }
+
 body {
-  background-color: blue; }
+  background-color: darkgreen; }
+
+.wheelContainer {
+  width: 500px;
+  height: 500px;
+  background-color: transparent;
+  position: relative;
+  z-index: 0;
+  animation: rotation 6s cubic-bezier(0.25, 0.98, 0.54, 1) forwards; }
+  .wheelContainer .wheelSeg1 {
+    color: black;
+    border-top: 250px solid lightblue;
+    transform: rotate(0deg); }
+  .wheelContainer .wheelSeg2 {
+    color: black;
+    border-top: 250px solid orange;
+    transform: rotate(15deg); }
+  .wheelContainer .wheelSeg3 {
+    color: black;
+    border-top: 250px solid white;
+    transform: rotate(30deg); }
+  .wheelContainer .wheelSeg4 {
+    color: black;
+    border-top: 250px solid red;
+    transform: rotate(45deg); }
+  .wheelContainer .wheelSeg5 {
+    color: black;
+    border-top: 250px solid lightgreen;
+    transform: rotate(60deg); }
+  .wheelContainer .wheelSeg6 {
+    color: white;
+    border-top: 250px solid black;
+    transform: rotate(75deg); }
+  .wheelContainer .wheelSeg7 {
+    color: black;
+    border-top: 250px solid yellow;
+    transform: rotate(90deg); }
+  .wheelContainer .wheelSeg8 {
+    color: black;
+    border-top: 250px solid orange;
+    transform: rotate(105deg); }
+  .wheelContainer .wheelSeg9 {
+    color: black;
+    border-top: 250px solid lightblue;
+    transform: rotate(120deg); }
+  .wheelContainer .wheelSeg10 {
+    color: black;
+    border-top: 250px solid lightgreen;
+    transform: rotate(135deg); }
+  .wheelContainer .wheelSeg11 {
+    color: black;
+    border-top: 250px solid purple;
+    transform: rotate(150deg); }
+  .wheelContainer .wheelSeg12 {
+    color: black;
+    border-top: 250px solid yellow;
+    transform: rotate(165deg); }
+  .wheelContainer .wheelSeg13 {
+    color: black;
+    border-top: 250px solid lightblue;
+    transform: rotate(180deg); }
+  .wheelContainer .wheelSeg14 {
+    color: black;
+    border-top: 250px solid white;
+    transform: rotate(195deg); }
+  .wheelContainer .wheelSeg15 {
+    color: black;
+    border-top: 250px solid red;
+    transform: rotate(210deg); }
+  .wheelContainer .wheelSeg16 {
+    color: black;
+    border-top: 250px solid lightgreen;
+    transform: rotate(225deg); }
+  .wheelContainer .wheelSeg17 {
+    color: black;
+    border-top: 250px solid purple;
+    transform: rotate(240deg); }
+  .wheelContainer .wheelSeg18 {
+    color: black;
+    border-top: 250px solid orange;
+    transform: rotate(255deg); }
+  .wheelContainer .wheelSeg19 {
+    color: black;
+    border-top: 250px solid white;
+    transform: rotate(270deg); }
+  .wheelContainer .wheelSeg20 {
+    color: black;
+    border-top: 250px solid pink;
+    transform: rotate(285deg); }
+  .wheelContainer .wheelSeg21 {
+    color: black;
+    border-top: 250px solid grey;
+    transform: rotate(300deg); }
+  .wheelContainer .wheelSeg22 {
+    color: black;
+    border-top: 250px solid red;
+    transform: rotate(315deg); }
+  .wheelContainer .wheelSeg23 {
+    color: black;
+    border-top: 250px solid yellow;
+    transform: rotate(330deg); }
+  .wheelContainer .wheelSeg24 {
+    color: black;
+    border-top: 250px solid grey;
+    transform: rotate(345deg); }
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg); }
+  15% {
+    transform: rotate(-50deg); }
+  100% {
+    transform: rotate(700deg); } }
 
 /*# sourceMappingURL=styles.css.map */
