@@ -7,9 +7,21 @@
   border-top-left-radius: 100% 5px;
   margin-left: 217.65px;
   margin-top: 0;
-  position: fixed;
+  position: absolute;
   transform-origin: 50% 100%;
   z-index: 1; }
+
+.wText h2 {
+  text-align: center;
+  position: relative;
+  width: 30px;
+  height: 100px;
+  z-index: 1;
+  top: -240px;
+  left: -15px;
+  background-color: transparent;
+  font-family: Times;
+  font-style: bold; }
 
 body {
   background-color: darkgreen; }
@@ -19,8 +31,7 @@ body {
   height: 500px;
   background-color: transparent;
   position: relative;
-  z-index: 0;
-  animation: rotation 6s cubic-bezier(0.25, 0.98, 0.54, 1) forwards; }
+  z-index: 0; }
   .wheelContainer .wheelSeg1 {
     color: black;
     border-top: 250px solid lightblue;
@@ -117,6 +128,16 @@ body {
     color: black;
     border-top: 250px solid grey;
     transform: rotate(345deg); }
+  .wheelContainer .center {
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: green;
+    z-index: 4;
+    border-radius: 50%;
+    position: absolute;
+    left: 40%;
+    top: 40%; }
 
 @keyframes rotation {
   0% {

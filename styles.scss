@@ -7,7 +7,7 @@
 	border-top-left-radius: 100%5px;
 	margin-left: (250px-32.35px);
 	margin-top: 0;
-	position: fixed;
+	position: absolute;
 	transform-origin: 50% 100%;
 	z-index: 1;
 }
@@ -18,11 +18,26 @@
 	transform: rotate($rotation);
 }
 
+.wText h2 {
+	text-align: center;
+	position:relative;
+	width:30px;
+	height:100px;
+	z-index: 1;
+	top: -240px;
+	left: -15px;
+	background-color: transparent;
+	font-family: Times;
+	font-style: bold;
+}
+
 $rot: 15deg;
 
 body {
 	background-color: darkgreen;
 }
+
+
 
 .wheelContainer {
 	width:500px;
@@ -30,7 +45,7 @@ body {
 	background-color: transparent;
 	position:relative;
 	z-index: 0;
-	animation: rotation 6s cubic-bezier(0.25, 0.98, 0.54, 1) forwards;
+	//animation: rotation 6s cubic-bezier(0.25, 0.98, 0.75, 1) forwards;
 
 	.seg {
 		@extend %segment
@@ -106,6 +121,17 @@ body {
 	}
 	.wheelSeg24 {
 		@include segment_style(black, grey, 23 * $rot)
+	}
+	.center {
+		display: block;
+		width: 100px;
+		height: 100px;
+		background-color: green;
+		z-index: 4;
+		border-radius: 50%;
+		position: absolute;
+		left:40%;
+		top:40%;
 	}
 
 	
