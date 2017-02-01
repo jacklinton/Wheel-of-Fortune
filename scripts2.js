@@ -12,8 +12,12 @@ wheelContainer.addEventListener("click", function(){
 	})
 
 function getSegValue(){
+	if (Math.floor(25 - ((rando%(360))/15)) == 10 && ((25 - ((rando%(360))/15))-10)*10 > 35 && ((25 - ((rando%(360))/15))-10)*10 < 65) {
+		segValue = Math.floor(25 - ((rando%(360))/15))
+		document.getElementById("s105").classList.add("lightUp")
+	} else {
+		segValue = Math.floor(25 - ((rando%(360))/15))
+		document.getElementById("s" + segValue).classList.add("lightUp")
+	}
 	
-	segValue = Math.floor(25 - ((rando%(360))/15))
-
-	document.getElementById("s" + segValue).classList.add("lightUp")
 }

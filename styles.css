@@ -37,6 +37,20 @@
   background-color: transparent;
   font-family: Times; }
 
+#s10 p {
+  text-align: center;
+  position: relative;
+  width: 40px;
+  height: 100px;
+  z-index: 1;
+  top: -240px;
+  left: -20px;
+  background-color: transparent;
+  font-family: Times;
+  font-size: 12px;
+  font-style: bold;
+  z-index: 5 !important; }
+
 body {
   background-color: darkgreen; }
 
@@ -99,8 +113,17 @@ body {
     border-top: 250px solid lightblue;
     transform: rotate(120deg); }
   .wheelContainer .seg--wheelSeg10 {
-    color: black;
-    border-top: 250px solid lightgreen;
+    color: yellow !important;
+    border-top: 250px solid black;
+    transform: rotate(135deg); }
+  .wheelContainer .seg--wheelSeg105 {
+    border-left: 10px solid transparent !important;
+    border-right: 10px solid transparent !important;
+    margin-left: 240px !important;
+    opacity: .6;
+    z-index: 1;
+    color: yellow;
+    border-top: 250px solid red;
     transform: rotate(135deg); }
   .wheelContainer .seg--wheelSeg11 {
     color: black;
@@ -127,7 +150,7 @@ body {
     border-top: 250px solid lightgreen;
     transform: rotate(225deg); }
   .wheelContainer .seg--wheelSeg17 {
-    color: black;
+    color: white;
     border-top: 250px solid purple;
     transform: rotate(240deg); }
   .wheelContainer .seg--wheelSeg18 {

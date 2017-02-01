@@ -45,6 +45,21 @@
 	font-family: Times;
 }
 
+#s10  p {
+	text-align: center;
+	position:relative;
+	width:40px;
+	height:100px;
+	z-index: 1;
+	top: -240px;
+	left: -20px;
+	background-color: transparent;
+	font-family: Times;
+	font-size: 12px;
+	font-style: bold;
+	z-index: 5 !important;
+}
+
 $rot: 15deg;
 
 body {
@@ -106,7 +121,15 @@ body {
 			@include segment_style(black, lightblue, 8 * $rot)
 		}
 		&--wheelSeg10 {
-			@include segment_style(black, lightgreen, 9 * $rot)
+		 	@include segment_style(yellow !important, black, 9 * $rot)
+		}
+		&--wheelSeg105{
+			border-left: 10px solid transparent !important;
+			border-right: 10px solid transparent !important;
+			margin-left: (250px-10px) !important;
+			opacity: .6;
+			z-index: 1;
+			@include segment_style(yellow, red, 9 * $rot)
 		}
 		&--wheelSeg11 {
 			@include segment_style(black, purple, 10 * $rot)
@@ -127,7 +150,7 @@ body {
 			@include segment_style(black, lightgreen, 15 * $rot)
 		}
 		&--wheelSeg17 {
-			@include segment_style(black, purple, 16 * $rot)
+			@include segment_style(white, purple, 16 * $rot)
 		}
 		&--wheelSeg18 {
 			@include segment_style(black, orange, 17 * $rot)
