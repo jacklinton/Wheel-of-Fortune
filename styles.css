@@ -11,6 +11,10 @@
   transform-origin: 50% 100%;
   z-index: 1; }
 
+.lightUp {
+  color: white !important;
+  border-top: 250px solid magenta !important; }
+
 .wText h2 {
   text-align: center;
   position: relative;
@@ -20,111 +24,137 @@
   top: -240px;
   left: -15px;
   background-color: transparent;
-  font-family: Times;
-  font-style: bold; }
+  font-family: Times; }
+
+.wText p {
+  text-align: center;
+  position: relative;
+  width: 30px;
+  height: 100px;
+  z-index: 1;
+  top: -240px;
+  left: -15px;
+  background-color: transparent;
+  font-family: Times; }
 
 body {
   background-color: darkgreen; }
 
+.wheelRotate {
+  animation: rotation 6s cubic-bezier(0.25, 0.98, 0.75, 1) forwards;
+  animation-iteration-count: infinite; }
+
+.pointer {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid black;
+  left: 210px;
+  z-index: 7;
+  position: fixed; }
+
 .wheelContainer {
+  margin-top: 20px;
   width: 500px;
   height: 500px;
   background-color: transparent;
   position: relative;
-  z-index: 0; }
-  .wheelContainer .wheelSeg1 {
+  z-index: 0;
+  transition: all 6s cubic-bezier(0.25, 0.98, 0.75, 1); }
+  .wheelContainer .seg--wheelSeg1 {
     color: black;
     border-top: 250px solid lightblue;
     transform: rotate(0deg); }
-  .wheelContainer .wheelSeg2 {
+  .wheelContainer .seg--wheelSeg2 {
     color: black;
     border-top: 250px solid orange;
     transform: rotate(15deg); }
-  .wheelContainer .wheelSeg3 {
+  .wheelContainer .seg--wheelSeg3 {
     color: black;
     border-top: 250px solid white;
     transform: rotate(30deg); }
-  .wheelContainer .wheelSeg4 {
+  .wheelContainer .seg--wheelSeg4 {
     color: black;
     border-top: 250px solid red;
     transform: rotate(45deg); }
-  .wheelContainer .wheelSeg5 {
+  .wheelContainer .seg--wheelSeg5 {
     color: black;
     border-top: 250px solid lightgreen;
     transform: rotate(60deg); }
-  .wheelContainer .wheelSeg6 {
+  .wheelContainer .seg--wheelSeg6 {
     color: white;
     border-top: 250px solid black;
     transform: rotate(75deg); }
-  .wheelContainer .wheelSeg7 {
+  .wheelContainer .seg--wheelSeg7 {
     color: black;
     border-top: 250px solid yellow;
     transform: rotate(90deg); }
-  .wheelContainer .wheelSeg8 {
+  .wheelContainer .seg--wheelSeg8 {
     color: black;
     border-top: 250px solid orange;
     transform: rotate(105deg); }
-  .wheelContainer .wheelSeg9 {
+  .wheelContainer .seg--wheelSeg9 {
     color: black;
     border-top: 250px solid lightblue;
     transform: rotate(120deg); }
-  .wheelContainer .wheelSeg10 {
+  .wheelContainer .seg--wheelSeg10 {
     color: black;
     border-top: 250px solid lightgreen;
     transform: rotate(135deg); }
-  .wheelContainer .wheelSeg11 {
+  .wheelContainer .seg--wheelSeg11 {
     color: black;
     border-top: 250px solid purple;
     transform: rotate(150deg); }
-  .wheelContainer .wheelSeg12 {
+  .wheelContainer .seg--wheelSeg12 {
     color: black;
     border-top: 250px solid yellow;
     transform: rotate(165deg); }
-  .wheelContainer .wheelSeg13 {
-    color: black;
-    border-top: 250px solid lightblue;
+  .wheelContainer .seg--wheelSeg13 {
+    color: white;
+    border-top: 250px solid black;
     transform: rotate(180deg); }
-  .wheelContainer .wheelSeg14 {
+  .wheelContainer .seg--wheelSeg14 {
     color: black;
     border-top: 250px solid white;
     transform: rotate(195deg); }
-  .wheelContainer .wheelSeg15 {
+  .wheelContainer .seg--wheelSeg15 {
     color: black;
     border-top: 250px solid red;
     transform: rotate(210deg); }
-  .wheelContainer .wheelSeg16 {
+  .wheelContainer .seg--wheelSeg16 {
     color: black;
     border-top: 250px solid lightgreen;
     transform: rotate(225deg); }
-  .wheelContainer .wheelSeg17 {
+  .wheelContainer .seg--wheelSeg17 {
     color: black;
     border-top: 250px solid purple;
     transform: rotate(240deg); }
-  .wheelContainer .wheelSeg18 {
+  .wheelContainer .seg--wheelSeg18 {
     color: black;
     border-top: 250px solid orange;
     transform: rotate(255deg); }
-  .wheelContainer .wheelSeg19 {
+  .wheelContainer .seg--wheelSeg19 {
     color: black;
     border-top: 250px solid white;
     transform: rotate(270deg); }
-  .wheelContainer .wheelSeg20 {
+  .wheelContainer .seg--wheelSeg20 {
     color: black;
     border-top: 250px solid pink;
     transform: rotate(285deg); }
-  .wheelContainer .wheelSeg21 {
+  .wheelContainer .seg--wheelSeg21 {
     color: black;
     border-top: 250px solid grey;
     transform: rotate(300deg); }
-  .wheelContainer .wheelSeg22 {
+  .wheelContainer .seg--wheelSeg22 {
     color: black;
     border-top: 250px solid red;
     transform: rotate(315deg); }
-  .wheelContainer .wheelSeg23 {
+  .wheelContainer .seg--wheelSeg23 {
     color: black;
     border-top: 250px solid yellow;
     transform: rotate(330deg); }
-  .wheelContainer .wheelSeg24 {
+  .wheelContainer .seg--wheelSeg24 {
     color: black;
     border-top: 250px solid grey;
     transform: rotate(345deg); }
@@ -138,13 +168,5 @@ body {
     position: absolute;
     left: 40%;
     top: 40%; }
-
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg); }
-  15% {
-    transform: rotate(-50deg); }
-  100% {
-    transform: rotate(700deg); } }
 
 /*# sourceMappingURL=styles.css.map */

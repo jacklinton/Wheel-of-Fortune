@@ -18,6 +18,10 @@
 	transform: rotate($rotation);
 }
 
+.lightUp { 
+	color: white !important;
+	border-top: 250px solid magenta !important;
+}
 .wText h2 {
 	text-align: center;
 	position:relative;
@@ -28,7 +32,17 @@
 	left: -15px;
 	background-color: transparent;
 	font-family: Times;
-	font-style: bold;
+}
+.wText p {
+	text-align: center;
+	position:relative;
+	width:30px;
+	height:100px;
+	z-index: 1;
+	top: -240px;
+	left: -15px;
+	background-color: transparent;
+	font-family: Times;
 }
 
 $rot: 15deg;
@@ -37,90 +51,105 @@ body {
 	background-color: darkgreen;
 }
 
+.wheelRotate{
+	animation: rotation 6s cubic-bezier(0.25, 0.98, 0.75, 1) forwards;
+	animation-iteration-count: infinite;
+}
 
+.pointer{
+		width: 0;
+		height: 0;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-top: 10px solid black;
+		left: 210px;
+		z-index: 7;
+		position: fixed;
+}
 
 .wheelContainer {
+	margin-top: 20px;
 	width:500px;
 	height:500px;
 	background-color: transparent;
 	position:relative;
 	z-index: 0;
-	//animation: rotation 6s cubic-bezier(0.25, 0.98, 0.75, 1) forwards;
+	transition: all 6s cubic-bezier(0.25, 0.98, 0.75, 1);
 
 	.seg {
-		@extend %segment
-	}
-	.wheelSeg1 {
-		@include segment_style(black, lightblue, 0 * $rot)
-	}
-	.wheelSeg2 {
-		@include segment_style(black, orange, 1 * $rot)
-	}
-	.wheelSeg3 {
-		@include segment_style(black, white, 2 * $rot)
-	}
-	.wheelSeg4 {
-		@include segment_style(black, red, 3 * $rot)
-	}
-	.wheelSeg5 {
-		@include segment_style(black, lightgreen, 4 * $rot)
-	}
-	.wheelSeg6 {
-		@include segment_style(white, black, 5 * $rot)
-	}
-	.wheelSeg7 {
-		@include segment_style(black, yellow, 6 * $rot)
-	}
-	.wheelSeg8 {
-		@include segment_style(black, orange, 7 * $rot)
-	}
-	.wheelSeg9 {
-		@include segment_style(black, lightblue, 8 * $rot)
-	}
-	.wheelSeg10 {
-		@include segment_style(black, lightgreen, 9 * $rot)
-	}
-	.wheelSeg11 {
-		@include segment_style(black, purple, 10 * $rot)
-	}
-	.wheelSeg12 {
-		@include segment_style(black, yellow, 11 * $rot)
-	}
-	.wheelSeg13 {
-		@include segment_style(black, lightblue, 12 * $rot)
-	}
-	.wheelSeg14 {
-		@include segment_style(black, white, 13 * $rot)
-	}
-	.wheelSeg15 {
-		@include segment_style(black, red, 14 * $rot)
-	}
-	.wheelSeg16 {
-		@include segment_style(black, lightgreen, 15 * $rot)
-	}
-	.wheelSeg17 {
-		@include segment_style(black, purple, 16 * $rot)
-	}
-	.wheelSeg18 {
-		@include segment_style(black, orange, 17 * $rot)
-	}
-	.wheelSeg19 {
-		@include segment_style(black, white, 18 * $rot)
-	}
-	.wheelSeg20 {
-		@include segment_style(black, pink, 19 * $rot)
-	}
-	.wheelSeg21 {
-		@include segment_style(black, grey, 20 * $rot)
-	}
-	.wheelSeg22 {
-		@include segment_style(black, red, 21 * $rot)
-	}
-	.wheelSeg23 {
-		@include segment_style(black, yellow, 22 * $rot)
-	}
-	.wheelSeg24 {
-		@include segment_style(black, grey, 23 * $rot)
+		@extend %segment;
+		&--wheelSeg1 {
+			@include segment_style(black, lightblue, 0 * $rot)
+		}
+		&--wheelSeg2 {
+			@include segment_style(black, orange, 1 * $rot)
+		}
+		&--wheelSeg3 {
+			@include segment_style(black, white, 2 * $rot)
+		}
+		&--wheelSeg4 {
+			@include segment_style(black, red, 3 * $rot)
+		}
+		&--wheelSeg5 {
+			@include segment_style(black, lightgreen, 4 * $rot)
+		}
+		&--wheelSeg6 {
+			@include segment_style(white, black, 5 * $rot)
+		}
+		&--wheelSeg7 {
+			@include segment_style(black, yellow, 6 * $rot)
+		}
+		&--wheelSeg8 {
+			@include segment_style(black, orange, 7 * $rot)
+		}
+		&--wheelSeg9 {
+			@include segment_style(black, lightblue, 8 * $rot)
+		}
+		&--wheelSeg10 {
+			@include segment_style(black, lightgreen, 9 * $rot)
+		}
+		&--wheelSeg11 {
+			@include segment_style(black, purple, 10 * $rot)
+		}
+		&--wheelSeg12 {
+			@include segment_style(black, yellow, 11 * $rot)
+		}
+		&--wheelSeg13 {
+			@include segment_style(white, black, 12 * $rot)
+		}
+		&--wheelSeg14 {
+			@include segment_style(black, white, 13 * $rot)
+		}
+		&--wheelSeg15 {
+			@include segment_style(black, red, 14 * $rot)
+		}
+		&--wheelSeg16 {
+			@include segment_style(black, lightgreen, 15 * $rot)
+		}
+		&--wheelSeg17 {
+			@include segment_style(black, purple, 16 * $rot)
+		}
+		&--wheelSeg18 {
+			@include segment_style(black, orange, 17 * $rot)
+		}
+		&--wheelSeg19 {
+			@include segment_style(black, white, 18 * $rot)
+		}
+		&--wheelSeg20 {
+			@include segment_style(black, pink, 19 * $rot)
+		}
+		&--wheelSeg21 {
+			@include segment_style(black, grey, 20 * $rot)
+		}
+		&--wheelSeg22 {
+			@include segment_style(black, red, 21 * $rot)
+		}
+		&--wheelSeg23 {
+			@include segment_style(black, yellow, 22 * $rot)
+		}
+		&--wheelSeg24 {
+			@include segment_style(black, grey, 23 * $rot)
+		}
 	}
 	.center {
 		display: block;
@@ -133,22 +162,21 @@ body {
 		left:40%;
 		top:40%;
 	}
-
 	
 }
 
-@keyframes rotation {
-	0%{
-		transform: rotate(0deg);
-	}
-	15%{
-		transform: rotate(-50deg);
-	}
+ // @keyframes rotation {
+	// 0%{
+	// 	transform: rotate(0deg);
+ // 	}
+	// 15%{
+ // 		transform: rotate(-50deg);
+ // 	}
 
-	100%{
-		transform: rotate(700deg);
-	}
-}
+	// 100%{
+ // 		transform: rotate(700deg);
+ // 	}
+ // }
 
 
 
