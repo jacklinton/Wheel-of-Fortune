@@ -1,0 +1,13 @@
+.letterBoxContainer {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  height: 240px;
+  width: 420px;
+  background-color: red;
+  top: 10%;
+  right: 20%;
+  position: absolute; }
+
+/*# sourceMappingURL=wordGrid.css.map */

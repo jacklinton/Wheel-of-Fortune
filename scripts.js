@@ -19,17 +19,20 @@ $(document).ready( function(){
 	var itter3 = "0deg"
 
 	wheelContainer.addEventListener("click", function(){
-		rando = parseInt((Math.random() + 1) * 360)
-		var stringy = rando + "deg"
-		keyFrames = keyFrames.replace(/DYNAMIC_VALUE_3/g, itter3)
-		keyFrames = keyFrames.replace(/DYNAMIC_VALUE_2/g, itter2)	
-		keyFrames = keyFrames.replace(/DYNAMIC_VALUE/g, stringy)
-		styleTag.innerHTML = keyFrames
-		wheelContainer.classList.add("wheelRotate")
-		itter3 = rando + "deg"
-		itter2 = (rando - 50) + "deg"
+		setTheKeyValues()
 	})
 })
 
+function setTheKeyValues(){
+	rando = parseInt((Math.random() + 1) * 360)
+	var stringy = rando + "deg"
+	keyFrames = keyFrames.replace(/DYNAMIC_VALUE_3/g, itter3)
+	keyFrames = keyFrames.replace(/DYNAMIC_VALUE_2/g, itter2)	
+	keyFrames = keyFrames.replace(/DYNAMIC_VALUE/g, stringy)
+	styleTag.innerHTML = keyFrames
+	wheelContainer.classList.add("wheelRotate")
+	itter3 = rando + "deg"
+	itter2 = (rando - 50) + "deg"
+	wheelContainer.removeEventListener("click")
 
-
+}
