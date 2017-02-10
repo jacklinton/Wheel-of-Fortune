@@ -1,15 +1,27 @@
+$numOfWords: 4;
+$numOfLetters: 6;
+
 %letterBox {
 	display: block;
 	height: 60px;
 	width: 30px;
-	
+	background-color: white;
 }
 
 %wordBox {
+	display: block;
+	height: 60px;
+	width: $numOfLetters * 30px;
+}
 
+%blankBox {
+	display:block;
+	height: 60px;
+	width: 30px;
+	background-color: red;
 }
 .letterBoxContainer {
-	display: inline-flex;
+	display: inlineflex;
 	flex-wrap: wrap;
 	justify-content: center;
 	align-content: center;
