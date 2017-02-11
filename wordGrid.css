@@ -1,13 +1,47 @@
+.letterBoxContainer .words {
+  display: block;
+  height: 60px;
+  font-size: 30px;
+  font-weight: bolder;
+  background-color: white;
+  text-align: center;
+  white-space: pre;
+  position: relative; }
+
+.corner {
+  background-color: darkgreen; }
+
 .letterBoxContainer {
-  display: inlineflex;
+  list-style: none;
+  display: inline-flex;
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
   height: 240px;
-  width: 420px;
+  width: 630px;
+  padding: 0;
   background-color: red;
-  top: 10%;
-  right: 20%;
-  position: absolute; }
+  top: 20%;
+  right: 10%;
+  position: absolute;
+  clear: left; }
+  .letterBoxContainer .words--joining {
+    width: 315px !important; }
+  .letterBoxContainer .words--a {
+    width: 45px !important; }
+  .letterBoxContainer .words--book {
+    width: 180px !important; }
+  .letterBoxContainer .words--club {
+    width: 180px !important; }
+  .letterBoxContainer .blankBox {
+    display: inline-block;
+    height: 60px;
+    width: 45px;
+    background-color: green;
+    position: relative;
+    border-color: black;
+    border-width: 1px; }
+  .letterBoxContainer .corner {
+    background-color: darkgreen; }
 
 /*# sourceMappingURL=wordGrid.css.map */

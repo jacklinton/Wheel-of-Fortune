@@ -1,34 +1,73 @@
-$numOfWords: 4;
-$numOfLetters: 6;
+
 
 %letterBox {
 	display: block;
 	height: 60px;
-	width: 30px;
+	font-size: 30px;
+	font-weight: bolder;
 	background-color: white;
+	text-align: center;
+	white-space: pre;
+	position: relative;
+	
+}
+.corner {
+	background-color: darkgreen;
+}
+@mixin wordBox($numOfLetters) {
+	
+	width: ($numOfLetters * 45px) !important;
+	
 }
 
-%wordBox {
-	display: block;
-	height: 60px;
-	width: $numOfLetters * 30px;
-}
 
-%blankBox {
-	display:block;
-	height: 60px;
-	width: 30px;
-	background-color: red;
-}
+
 .letterBoxContainer {
-	display: inlineflex;
+	list-style: none;
+	display: inline-flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	align-content: center;
 	height: 240px;
-	width: 420px;
+	width: 630px;
+	padding: 0;
 	background-color: red;
-	top: 10%;
-	right: 20%;
+	top: 20%;
+	right: 10%;
 	position: absolute;
+	clear: left;
+
+	.words {
+		@extend %letterBox;
+
+		&--joining {
+			@include wordBox(7)
+		}
+		&--a {
+			@include wordBox(1)
+		}
+		&--book {
+			@include wordBox(4)
+		}
+		&--club {
+			@include wordBox(4)
+		}
+	}
+	.blankBox {
+	display: inline-block;
+	height: 60px;
+	width: 45px;
+	background-color: green;
+	position: relative;
+	border-color: black;
+	border-width: 1px;
+	
+	
+	}.corner {
+	background-color: darkgreen;
 }
+
+
+}
+
+
