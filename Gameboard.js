@@ -1,4 +1,4 @@
-var puzzle [
+var puzzle = [
 	["Thing", "Profitability"],
 	["What Are You Doing?", "Waiting Anxiously"],
 	["Food & Drink", "Flavorful Appetizer"],
@@ -17,59 +17,78 @@ var puzzle [
 	["Phrase","On My Way Home"],
 	["Phrase","Hot And Juicy"],
 	["Thing", "Witty Joke"],
-	["Thing", "Privacy Policy"]
-	["Thing", "Gust of Air"]
+	["Thing", "Privacy Policy"],
+	["Thing", "Gust of Air"],
 	["Thing", "A Package In Your Mail Box"]
 ]
 
-var rand = function getRandomIntInclusive(0, 21) {
-  min = Math.ceil(0);
-  max = Math.floor(1);
+var rand = getRandomIntInclusive(0,20)
+
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-var padA = gameTotal.length/4
-var gameA //#of words in the first line
-var padB = gameTotal.length/2 + gameTotal%2
-var gameB = gameWords.length - gameA //#of words in second line
-var padC = padA
-var gameTotal = game.split("")
-var gameWords = game.split(" ")
+
+
 var game = puzzle[rand][1]
 var type = puzzle[rand][0]
-var line1 //words of first line
-var line2 //word of second line
+var gameTotal = game.split("")
+var gameWords = game.split(" ")
+var padA = Math.floor(((28 - gameTotal.length)/2)/2)
+var padB = Math.floor((28 - gameTotal.length)/2) + (28 - gameTotal.length)%2
+var gameA = firstLineLength(gameTotal, gameWords, padA)//#of words in the first line
+var gameB = gameWords.length - gameA //#of words in second line
+var line1 = firstLine(gameA, gameWords)//words of first line
+var line2 = secondLine(gameA, gameB, gameWords)//word of second line
 
-gameA = function(gameWords) {
+var padC = oddOrEven(padA, gameTotal.length)
+
+function oddOrEven(padA, length) {
+	if (length%2 == 1) {
+		padC = padA + 1
+	} else {
+		padC = padA
+	}
+	return padC
+}
+
+
+function firstLineLength(gameTotal, gameWords, padA) {
+	
 	var a = 0
-	var gA = 0
-	function gameAlength(gameWords) {
-		if (gA < 14) {
-			gA += gameWords[a].length + 1
+	var gA = padA
+	if (gameTotal.length + gA > (14)) {
+		while(gA <= 14) {
 			a += 1
-			gameAlength(gameWords)
-		} else {
-			return a
+			gA += (gameWords[a-1]).length + 1
+			console.log(gA, a)
 		}
+		return a-1
 	}
-	return a
+	else {
+		return gameWords.length
+	}
+	
 }
 
-line1 = function(gameA, gameWords) {
-	arry = []
-	for (var i = 0; i < gameA-1; i++) {
-		arry += gameWords[i]
-	}
-	return arry
-}
-
-line2 = function(gameA, gameB, gameWords) {
-	arry = []
-	for (var i = gameA - 1; i < gameB.length; i++) {
-		arry += gameWords[i]
+function firstLine(gameA, gameWords) {
+	var arry = []
+	for (var i = 0; i < gameA; i++) {
+		arry.push(gameWords[i])
 	}
 	return arry
 }
 
-console.log("Game type: ", type, "Puzzle words:", game, "padA: ", padA, "padB: ", padB, "padC: ", padC, "First Line: ", line1, "Second Line: ", line2)
+function secondLine(gameA, gameB, gameWords) {
+	var arry = []
+	for (var i = gameA; i <= gameWords.length - 1; i++) {
+		arry.push(gameWords[i])
+	}
+	return arry
+}
+
+
+console.log("Game type: ", type, ", Puzzle Words:", game, ", padA: ", padA, ", padB: ", padB, ", padC: ", padC, ", First Line: ", line1, ", Second Line: ", line2)
 
