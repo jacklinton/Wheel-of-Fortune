@@ -21,18 +21,20 @@
   width: 630px;
   padding: 0;
   background-color: red;
-  top: 20%;
-  right: 10%;
+  top: 15%;
+  right: 5%;
   position: absolute;
   clear: left; }
-  .letterBoxContainer .words--joining {
-    width: 315px !important; }
   .letterBoxContainer .words--a {
     width: 45px !important; }
-  .letterBoxContainer .words--book {
+  .letterBoxContainer .words--package {
+    width: 315px !important; }
+  .letterBoxContainer .words--in {
+    width: 90px !important; }
+  .letterBoxContainer .words--your {
     width: 180px !important; }
-  .letterBoxContainer .words--club {
-    width: 180px !important; }
+  .letterBoxContainer .words--mailbox {
+    width: 315px !important; }
   .letterBoxContainer .blankBox {
     display: inline-block;
     height: 60px;
@@ -40,8 +42,10 @@
     background-color: green;
     position: relative;
     border-color: black;
-    border-width: 1px; }
+    border-width: 1px;
+    border-style: solid; }
   .letterBoxContainer .corner {
-    background-color: darkgreen; }
+    background-color: darkgreen;
+    border-style: none; }
 
 /*# sourceMappingURL=wordGrid.css.map */
