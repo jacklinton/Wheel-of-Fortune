@@ -1,22 +1,39 @@
-.letterBoxContainer .letter {
-  display: block;
+.corner {
+  background-color: darkgreen !important;
+  border: none !important; }
+
+.blankBox, .letterBoxContainer .beginning, .letterBoxContainer .padA, .letterBoxContainer .padB, .letterBoxContainer .padC, .letterBoxContainer .end {
+  display: inline-block;
   height: 60px;
+  width: 45px;
+  background-color: green;
+  position: relative;
+  border-color: black;
+  border-width: 1px;
+  border-style: solid; }
+
+.letter, .letterBoxContainer .line1, .letterBoxContainer .line2 {
+  display: inline-block;
+  height: 60px;
+  width: 45px;
   font-size: 30px;
   font-weight: bolder;
   background-color: white;
   text-align: center;
-  white-space: pre;
-  position: relative; }
+  position: relative;
+  margin: none;
+  border-width: 1px;
+  border-color: black;
+  border-style: solid; }
 
-.corner {
-  background-color: darkgreen; }
+#gameBoard {
+  display: block;
+  margin: none; }
 
 .letterBoxContainer {
   list-style: none;
   display: inline-flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
   height: 240px;
   width: 630px;
   padding: 0;
@@ -26,19 +43,7 @@
   position: absolute;
   clear: left; }
   .letterBoxContainer .beginning {
-    flex: 1; }
-  .letterBoxContainer .blankBox {
-    display: inline-block;
-    height: 60px;
-    width: 45px;
-    background-color: green;
-    position: relative;
-    border-color: black;
-    border-width: 1px;
-    border-style: solid; }
-  .letterBoxContainer .corner {
-    background-color: darkgreen;
-    border-style: none; }
+    flex: -1; }
   .letterBoxContainer .end {
     flex: 50; }
 
