@@ -41,7 +41,7 @@
 		@extend %letterBox;
 
 		&--a {
-			@include wordBox(1)
+			@include wordBox(7)
 		}
 		&--package {
 			@include wordBox(7)
