@@ -14,12 +14,6 @@
 .corner {
 	background-color: darkgreen;
 }
-@mixin wordBox($numOfLetters) {
-	
-	width: ($numOfLetters * 45px) !important;
-	
-}
-
 
 
 .letterBoxContainer {
@@ -37,25 +31,14 @@
 	position: absolute;
 	clear: left;
 
-	.words {
+	.letter {
 		@extend %letterBox;
-
-		&--a {
-			@include wordBox(7)
-		}
-		&--package {
-			@include wordBox(7)
-		}
-		&--in  {
-			@include wordBox(2)
-		}
-		&--your {
-			@include wordBox(4)
-		}
-		&--mailbox {
-			@include wordBox(7)
-		}
 	}
+	
+	.beginning {
+		flex: 1;
+	}
+
 	.blankBox {
 	display: inline-block;
 	height: 60px;
@@ -65,13 +48,16 @@
 	border-color: black;
 	border-width: 1px;
 	border-style: solid;
+	}
 	
-	
-	}.corner {
+	.corner {
 	background-color: darkgreen;
 	border-style: none;
-}
+	}
 
+	.end {
+		flex: 50;
+	}
 
 }
 

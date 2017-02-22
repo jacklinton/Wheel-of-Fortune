@@ -1,4 +1,4 @@
-.letterBoxContainer .words {
+.letterBoxContainer .letter {
   display: block;
   height: 60px;
   font-size: 30px;
@@ -25,16 +25,8 @@
   right: 5%;
   position: absolute;
   clear: left; }
-  .letterBoxContainer .words--a {
-    width: 315px !important; }
-  .letterBoxContainer .words--package {
-    width: 315px !important; }
-  .letterBoxContainer .words--in {
-    width: 90px !important; }
-  .letterBoxContainer .words--your {
-    width: 180px !important; }
-  .letterBoxContainer .words--mailbox {
-    width: 315px !important; }
+  .letterBoxContainer .beginning {
+    flex: 1; }
   .letterBoxContainer .blankBox {
     display: inline-block;
     height: 60px;
@@ -47,5 +39,7 @@
   .letterBoxContainer .corner {
     background-color: darkgreen;
     border-style: none; }
+  .letterBoxContainer .end {
+    flex: 50; }
 
 /*# sourceMappingURL=wordGrid.css.map */

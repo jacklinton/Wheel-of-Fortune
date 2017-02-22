@@ -21,31 +21,31 @@ var puzzle = [
 	["Thing", "Gust of Air"],
 	["Thing", "A Package In Your Mail Box"]
 ]
-var Game = puzzle
+var games = puzzle
 
-var newGame = new Game
 
-function getRandomIntInclusive(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
 
 var Play = function() {
-		var rand = getRandomIntInclusive(0,20)
-		var game = newGame[rand][1]
-		this.type = newGame[rand][0]
+		this.rand = getRandomIntInclusive(0,(games.length-1))
+	    var game = games[this.rand][1]
+		this.type = games[this.rand][0]
 		var gameTotal = game.split("")
 		var gameWords = game.split(" ")
 		this.padA = Math.floor(((28 - gameTotal.length)/2)/2)
 		this.padB = Math.floor((28 - gameTotal.length)/2) + (28 - gameTotal.length)%2
-		var gameA = firstLineLength(gameTotal, gameWords, padA)//#of words in the first line
+		var gameA = firstLineLength(gameTotal, gameWords, this.padA)//#of words in the first line
 		var gameB = gameWords.length - gameA //#of words in second line
 		this.line1 = firstLine(gameA, gameWords)//words of first line
 		this.line2 = secondLine(gameA, gameB, gameWords)//word of second line
-		this.padC = oddOrEven(padA, gameTotal.length)
+		this.padC = oddOrEven(this.padA, gameTotal.length)
 
-		newGame = newGame.splice(rand, 1)
+		games.splice(this.rand, 1)
+
+		function getRandomIntInclusive(min, max) {
+		  min = Math.ceil(min);
+		  max = Math.floor(max);
+		  return Math.floor(Math.random() * (max - min + 1)) + min;
+		}
 
 
 		function oddOrEven(padA, length) {
@@ -95,9 +95,9 @@ var Play = function() {
 
 }
 
-var playWheel1 = new Play
-var playwheel2 = new Play
-var playWheel3 = new Play
-var playWheel4 = new Play
-var playWheel5 = new Play
-console.log(playWheel1, playwheel2, playWheel3, playWheel4, playWheel5)
+var wheelRound1 = new Play
+var wheelRound2 = new Play
+var wheelRound3 = new Play
+var wheelRound4 = new Play
+var wheelRound5 = new Play
+
