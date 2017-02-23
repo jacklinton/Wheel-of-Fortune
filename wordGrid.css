@@ -2,7 +2,7 @@
   background-color: darkgreen !important;
   border: none !important; }
 
-.blankBox, .letterBoxContainer .beginning, .letterBoxContainer .padA, .letterBoxContainer .padB, .letterBoxContainer .padC, .letterBoxContainer .end {
+.blankBox, #underBoxContainer .under, .letterBoxContainer .beginning, .letterBoxContainer .padA, .letterBoxContainer .padB, .letterBoxContainer .padC, .letterBoxContainer .end, .letterBoxContainer .theone {
   display: inline-block;
   height: 60px;
   width: 45px;
@@ -28,11 +28,31 @@
   border-style: solid;
   vertical-align: bottom;
   transform: rotateY(180deg);
-  opacity: 0; }
+  backface-visibility: hidden; }
 
 #gameBoard {
   display: block;
   margin: none; }
+
+#underBoxContainer {
+  list-style: none;
+  display: inline-flex;
+  flex-wrap: wrap;
+  height: 240px;
+  width: 630px;
+  padding: 0;
+  background-color: lightgrey;
+  top: 15%;
+  right: 5%;
+  position: absolute;
+  clear: left;
+  z-index: 1; }
+  #underBoxContainer .under {
+    display: inline-block;
+    clear: left;
+    background-color: lightgrey !important;
+    z-index: 1;
+    position: relative; }
 
 .letterBoxContainer {
   list-style: none;
@@ -41,14 +61,20 @@
   height: 240px;
   width: 630px;
   padding: 0;
-  background-color: red;
+  background-color: none;
   top: 15%;
   right: 5%;
   position: absolute;
-  clear: left; }
+  clear: left;
+  z-index: 2; }
   .letterBoxContainer .beginning {
     flex: -1; }
   .letterBoxContainer .end {
     flex: 50; }
+  .letterBoxContainer .theone {
+    position: absolute;
+    bottom: 25%;
+    right: 0%;
+    z-index: 1; }
 
 /*# sourceMappingURL=wordGrid.css.map */

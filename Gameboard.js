@@ -16,7 +16,6 @@ var puzzle = [
 	["Phrase","Hot And Juicy"],
 	["Thing", "Privacy Policy"],
 	["Thing", "Gust of Air"],
-	["Thing", "A Package In Your Mail Box"]
 ]
 var games = puzzle
 
@@ -34,7 +33,7 @@ var Play = function() {
 		var gameB = gameWords.length - gameA //#of words in second line
 		this.line1 = firstLine(gameA, gameWords)//words of first line
 		this.line2 = secondLine(gameA, gameB, gameWords)//word of second line
-		this.padC = oddOrEven(this.padA, gameTotal.length)
+		this.padC = this.padA
 
 		games.splice(this.rand, 1)
 
@@ -89,6 +88,16 @@ var Play = function() {
 			return arry
 		}
 		
+		this.letters = function(gameWords){
+			let chars = ""
+			for (var i = 0; i < gameWords.length; i++) {
+				chars += "," + gameWords[i].split("")
+			}
+			chars = chars.split(",")
+			chars.splice(0,1)
+			return chars
+		}
+		this.letters = this.letters(gameWords)
 
 }
 

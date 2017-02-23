@@ -31,12 +31,38 @@
 	border-style: solid;
 	vertical-align: bottom;
 	transform: rotateY(180deg);
-	opacity: 0;
+	backface-visibility: hidden;
+	
 }
 
 #gameBoard {
 	display: block;
 	margin: none;
+}
+
+#underBoxContainer {
+	list-style: none;
+	display: inline-flex;
+	flex-wrap: wrap;
+	height: 240px;
+	width: 630px;
+	padding: 0;
+	background-color: lightgrey;
+	top: 15%;
+	right: 5%;
+	position: absolute;
+	clear: left;
+	z-index: 1;
+
+	.under {
+			@extend .blankBox;
+			display: inline-block;
+			clear: left;
+			background-color: lightgrey !important;
+			z-index: 1;
+			position: relative;
+		}
+
 }
 
 .letterBoxContainer {
@@ -46,12 +72,14 @@
 	height: 240px;
 	width: 630px;
 	padding: 0;
-	background-color: red;
+	background-color: none;
 	top: 15%;
 	right: 5%;
 	position: absolute;
 	clear: left;
+	z-index: 2;
 
+		
 		.beginning {
 			flex: -1;
 			@extend .blankBox;
@@ -79,7 +107,13 @@
 			flex: 50;
 			@extend .blankBox;
 		}
-	
+		.theone {
+			@extend .blankBox;
+			position: absolute;
+			bottom: 25%;
+			right: 0%;
+			z-index: 1;
+		}
 
 
 }

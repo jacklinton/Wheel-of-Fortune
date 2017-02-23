@@ -1,17 +1,26 @@
 function GameBoardBuilder(wheelRound){
 	var counter = 1
+	base()
 	one()	
 	two()
 	three()
 	four()
 	five()
 
+	function base(){
+		for (var i = 0; i < 52; i++) {
+			let theDiv = document.createElement("div")
+			theDiv.setAttribute("class", "under")
+			document.getElementById("underBoxContainer").appendChild(theDiv)
+		}
+	}
 	function one(){
 		for (var i = wheelRound.padA; i > 0; i--) {
-		let padAdiv = document.createElement("div")
-		padAdiv.setAttribute("class", "padA")
-		document.getElementById("gameBoard").appendChild(padAdiv)
-		console.log(counter)
+			let padAdiv = document.createElement("div")
+			padAdiv.setAttribute("class", "padA")
+			padAdiv.setAttribute("z-index", "2")
+			document.getElementById("gameBoard").appendChild(padAdiv)
+			console.log(counter)
 		}
 	}
 
@@ -22,6 +31,7 @@ function GameBoardBuilder(wheelRound){
 				let letter = document.createElement("div")
 				letter.setAttribute("class", "letter")
 				letter.setAttribute("flex", (y+2))
+				letter.setAttribute("z-index", 2)
 				letter.innerHTML = word[y].toUpperCase()
 				document.getElementById("gameBoard").appendChild(letter)
 				counter += 1
@@ -30,6 +40,7 @@ function GameBoardBuilder(wheelRound){
 		let betweenDiv = document.createElement("div")
 		betweenDiv.setAttribute("class", "blankBox")
 		betweenDiv.setAttribute("flex", (word.length + 2))
+		betweenDiv.setAttribute("z-index", 2)
 		document.getElementById("gameBoard").appendChild(betweenDiv)
 		counter += 1
 		console.log(counter)
@@ -39,10 +50,11 @@ function GameBoardBuilder(wheelRound){
 	function three(){
 		for (var i = wheelRound.padB; i > 0; i--) {
 		counter += 1
-		let padAdiv = document.createElement("div")
-		padAdiv.setAttribute("class", "padB")
-		padAdiv.setAttribute("flex", counter)
-		document.getElementById("gameBoard").appendChild(padAdiv)
+		let padBdiv = document.createElement("div")
+		padBdiv.setAttribute("class", "padB")
+		padBdiv.setAttribute("flex", counter)
+		padBdiv.setAttribute("z-index", 2)
+		document.getElementById("gameBoard").appendChild(padBdiv)
 		console.log(counter)
 		}
 	}
@@ -55,6 +67,7 @@ function GameBoardBuilder(wheelRound){
 				let letter = document.createElement("div")
 				letter.setAttribute("class", "letter")
 				letter.setAttribute("flex", counter)
+				letter.setAttribute("z-index", 2)
 				letter.innerHTML = word[y].toUpperCase()
 				document.getElementById("gameBoard").appendChild(letter)
 				counter += 1
@@ -64,6 +77,7 @@ function GameBoardBuilder(wheelRound){
 				let betweenDiv = document.createElement("div")
 				betweenDiv.setAttribute("class", "padC")
 				betweenDiv.setAttribute("flex", (word.length + 2))
+				betweenDiv.setAttribute("z-index", 2)
 				document.getElementById("gameBoard").appendChild(betweenDiv)
 				counter += 1
 				console.log(counter)
@@ -73,11 +87,23 @@ function GameBoardBuilder(wheelRound){
 
 	function five(){
 		for (var i = wheelRound.padC; i > 0; i--) {
-			let padAdiv = document.createElement("div")
-			padAdiv.setAttribute("class", "padC")
-			document.getElementById("gameBoard").appendChild(padAdiv)
+			let padCdiv = document.createElement("div")
+			padCdiv.setAttribute("class", "padC")
+			padCdiv.setAttribute("z-index", 2)
+			document.getElementById("gameBoard").appendChild(padCdiv)
 			console.log(counter)
 		}
+	}
+
+}
+
+var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+
+function Letters(){
+	for (var i = 0; i < 24; i++) {
+		document.getElementById("b" + i).addEventListener("click", function(){
+
+		})
 	}
 
 }
