@@ -13,21 +13,25 @@
 		border-color: black;
 		border-width: 1px;
 		border-style: solid;
+		margin: none;
 }
 
 .letter {
 	display: inline-block;
 	height: 60px;
 	width: 45px;
-	font-size: 30px;
-	font-weight: bolder;
+	font-size: 45px;
 	background-color: white;
+	background: white;
 	text-align: center;
 	position: relative;
 	margin: none;
 	border-width: 1px;
 	border-color: black;
 	border-style: solid;
+	vertical-align: bottom;
+	transform: rotateY(180deg);
+	opacity: 0;
 }
 
 #gameBoard {
