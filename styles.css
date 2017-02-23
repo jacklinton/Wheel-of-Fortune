@@ -11,6 +11,9 @@
   transform-origin: 50% 100%;
   z-index: 1; }
 
+#b0 {
+  background-color: transparent; }
+
 .lightUp {
   color: white !important;
   border-top: 250px solid magenta !important; }

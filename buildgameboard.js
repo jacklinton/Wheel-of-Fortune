@@ -6,6 +6,7 @@ function GameBoardBuilder(wheelRound){
 	three()
 	four()
 	five()
+	letterBtns()
 
 	function base(){
 		for (var i = 0; i < 52; i++) {
@@ -32,6 +33,7 @@ function GameBoardBuilder(wheelRound){
 				letter.setAttribute("class", "letter")
 				letter.setAttribute("flex", (y+2))
 				letter.setAttribute("z-index", 2)
+				letter.classList.toggle("hide")
 				letter.innerHTML = word[y].toUpperCase()
 				document.getElementById("gameBoard").appendChild(letter)
 				counter += 1
@@ -68,6 +70,7 @@ function GameBoardBuilder(wheelRound){
 				letter.setAttribute("class", "letter")
 				letter.setAttribute("flex", counter)
 				letter.setAttribute("z-index", 2)
+				letter.classList.toggle("hide")
 				letter.innerHTML = word[y].toUpperCase()
 				document.getElementById("gameBoard").appendChild(letter)
 				counter += 1
@@ -95,15 +98,32 @@ function GameBoardBuilder(wheelRound){
 		}
 	}
 
-}
+	var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 
-var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+	function letterBtns(){
 
-function Letters(){
-	for (var i = 0; i < 24; i++) {
-		document.getElementById("b" + i).addEventListener("click", function(){
+		buttons = document.getElementsByClassName("btn")
 
-		})
+		for(i=0; i<buttons.length; i++) {
+			buttons = document.getElementsByClassName("btn")
+
+			buttons[i].addEventListener("click", function() {
+				this.style.display = "none"
+				val = this.innerText
+				gameLetters(wheelRound, val)
+			})
+		}
 	}
 
+	function gameLetters(wheelRound, val){
+		chars = document.getElementsByClassName("letter")
+		for (var i = 0; i < chars.length; i++) {
+			if (val === chars[i].innerText) {
+				console.log(val, chars[i].innerText)
+				let abba = chars[i]
+				abba.classList.toggle("hide")
+			}
+		}
+	}
 }
+

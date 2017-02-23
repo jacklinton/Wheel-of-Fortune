@@ -26,7 +26,9 @@
   border-width: 1px;
   border-color: black;
   border-style: solid;
-  vertical-align: bottom;
+  vertical-align: bottom; }
+
+.hide, .letterBoxContainer .line1, .letterBoxContainer .line2 {
   transform: rotateY(180deg);
   backface-visibility: hidden; }
 

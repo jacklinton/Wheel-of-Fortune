@@ -12,6 +12,10 @@
 	z-index: 1;
 }
 
+#b0 {
+	background-color: transparent;
+}
+
 @mixin segment_style($color, $bColor, $rotation) {
 	color: $color;
 	border-top: 250px solid $bColor;

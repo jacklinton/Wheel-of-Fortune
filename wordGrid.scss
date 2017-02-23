@@ -30,9 +30,13 @@
 	border-color: black;
 	border-style: solid;
 	vertical-align: bottom;
+	
+	
+}
+
+.hide {
 	transform: rotateY(180deg);
 	backface-visibility: hidden;
-	
 }
 
 #gameBoard {
@@ -83,6 +87,7 @@
 		.beginning {
 			flex: -1;
 			@extend .blankBox;
+
 		}
 
 		.padA{
@@ -90,6 +95,7 @@
 		}
 		.line1 {
 			@extend .letter;
+			@extend .hide;
 		}
 		
 		.padB {
@@ -97,6 +103,7 @@
 		}
 		.line2 {
 			@extend .letter;
+			@extend .hide;
 		}
 
 		.padC{
