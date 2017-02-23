@@ -13,8 +13,24 @@
 	<style id="kfr" type="text/css">
 	</style>
 </head>
-<body>
+<body onload="GameBoardBuilder(wheelRound1)">
 	<div id="mainBody">
+		<div id="player1total">
+			<div>
+				<p>Player 1</p>
+			</div>
+			<div>
+				<h1>$0</h1>
+			</div>
+		</div>
+		<div id="player2total">
+			<div>
+				<p>Player 2</p>
+			</div>
+			<div>
+				<h1>$0</h1>
+			</div>
+		</div>
 		<div class="pointer">
 				
 			</div>
@@ -137,12 +153,26 @@
 		
 		
 	</ul>
+
+	<div id="wheelvalue">
+	</div>
+	<div id="gameType">
+	</div>
+
+
+
 	<button type="button" class="btn btn-default" id="b0"></button><button type="button"  class="btn btn-primary" id="b1">A</button><button type="button"  class="btn btn-primary" id="b2">B</button><button type="button"  class="btn btn-primary" id="b3">C</button><button type="button"  class="btn btn-primary" id="b4">D</button><button type="button"  class="btn btn-primary" id="b5">E</button>
 	<button type="button"  class="btn btn-primary" id="b6">F</button><button type="button"  class="btn btn-primary" id="b7">G</button><button type="button"  class="btn btn-primary" id="b8">H</button><button type="button"  class="btn btn-primary" id="b9">I</button><button type="button"  class="btn btn-primary" id="b1">J</button>
 	<button type="button"  class="btn btn-primary" id="b10">K</button><button type="button"  class="btn btn-primary" id="b11">L</button><button type="button"  class="btn btn-primary" id="b12">M</button><button type="button"  class="btn btn-primary" id="b13">N</button><button type="button"  class="btn btn-primary" id="b14">O</button>
 	<button type="button"  class="btn btn-primary" id="b15">P</button><button type="button"  class="btn btn-primary" id="b16">Q</button><button type="button"  class="btn btn-primary" id="b17">R</button><button type="button"  class="btn btn-primary" id="b18">S</button><button type="button"  class="btn btn-primary" id="b19">T</button>
 	<button type="button"  class="btn btn-primary" id="b19">U</button><button type="button"  class="btn btn-primary" id="b20">V</button><button type="button"  class="btn btn-primary" id="b21">W</button><button type="button"  class="btn btn-primary" id="b22">X</button><button type="button"  class="btn btn-primary" id="b23">Y</button>
 	<button type="button"  class="btn btn-primary" id="b24">Z</button>
+	<div class="puzzleSolve" id="puzzleSolve">
+		<form>
+			<label for="solve">Solve the Puzzle!</label>
+			<input type="text" name="solve"> | <button type="button" id="solve">Solve</button>
+		</form>
+	</div>
 	<script type="text/javascript" src="scripts2.js"></script>
 	<script type="text/javascript" src="Gameboard.js"></script>
 	<script type="text/javascript" src="buildgameboard.js"></script>

@@ -26,7 +26,8 @@
   border-width: 1px;
   border-color: black;
   border-style: solid;
-  vertical-align: bottom; }
+  vertical-align: bottom;
+  transition: all 1s easein; }
 
 .hide, .letterBoxContainer .line1, .letterBoxContainer .line2 {
   transform: rotateY(180deg);
@@ -78,5 +79,66 @@
     bottom: 25%;
     right: 0%;
     z-index: 1; }
+
+.puzzleSolve {
+  margin-left: 100px;
+  margin-top: 50px;
+  color: maroon; }
+
+#wheelvalue {
+  display: block;
+  height: 100px;
+  width: 350px;
+  background-color: lightgreen;
+  position: absolute;
+  top: 51%;
+  left: 40%;
+  border-color: yellow;
+  border-width: 3px;
+  border-style: solid;
+  color: yellow;
+  text-align: center; }
+
+#player1total {
+  display: block;
+  height: 100px;
+  width: 300px;
+  background-color: green;
+  position: absolute;
+  top: 0%;
+  right: 35%;
+  border-color: yellow;
+  border-width: 3px;
+  border-style: solid;
+  color: yellow;
+  text-align: center; }
+
+#player2total {
+  display: block;
+  height: 100px;
+  width: 300px;
+  background-color: green;
+  position: absolute;
+  top: 0%;
+  right: 10%;
+  border-color: yellow;
+  border-width: 3px;
+  border-style: solid;
+  color: yellow;
+  text-align: center; }
+
+#gameType {
+  display: block;
+  height: 100px;
+  width: 350px;
+  background-color: lightgreen;
+  position: absolute;
+  top: 51%;
+  right: 5%;
+  border-color: yellow;
+  border-width: 3px;
+  border-style: solid;
+  color: yellow;
+  text-align: center; }
 
 /*# sourceMappingURL=wordGrid.css.map */
