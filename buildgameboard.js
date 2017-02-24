@@ -8,6 +8,18 @@ function GameBoardBuilder(wheelRound){
 	five()
 	letterBtns()
 
+	document.getElementById("gameType").innerHTML = "<h1>" + "'" + wheelRound.type + "'" + "</h1>"
+	
+	wheelContainer.addEventListener("transitionend", function(){
+		window.setTimeout(function(){
+		theValue()}, 500)
+		function theValue(){
+			var segValues = [800,700,550,750,600,"Bankrupt!",900,"Loseturn",800,"Bankrupt!",600,950,"Bankrupt!",300,2500,350,"Loseturn",900,600,900,650,800,700,650]
+			segment = document.getElementsByClassName("lightup").id
+			document.getElementById("wheelvalue").innerHTML = "<h1>" + segValues[segValue-1] + "</h1><br><h1>" + segValue + "</h1>"
+		}
+	})
+
 	function base(){
 		for (var i = 0; i < 52; i++) {
 			let theDiv = document.createElement("div")
