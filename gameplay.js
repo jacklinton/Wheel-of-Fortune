@@ -78,9 +78,11 @@ function gamePlay(wheelRound) {
 						if (spinValue == "Bankrupt!") {
 							player1total = 0
 							counter += 1
+							player1turn()
 							player2turn()
 						} else {
 							counter += 1
+							player1turn()
 							player2turn()
 						}
 					} else {
@@ -94,9 +96,11 @@ function gamePlay(wheelRound) {
 						if (spinValue == "Bankrupt!") {
 							player2total = 0
 							counter += 1
+							player2turn()
 							player1turn()
 						} else {
 							counter += 1
+							player2turn()
 							player1turn()
 						}
 					} else {
