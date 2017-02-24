@@ -67,7 +67,7 @@ function gamePlay(wheelRound) {
 			function afterSpin(){
 				if (player1) {
 					if (isNaN(spinValue)){
-						if (spinValue == "Bankrupt") {
+						if (spinValue == "Bankrupt!") {
 							player1total = 0
 							counter += 1
 							player2turn()
@@ -83,7 +83,7 @@ function gamePlay(wheelRound) {
 					}
 				} else {
 					if (isNaN(spinValue)){
-						if (spinValue == "Bankrupt") {
+						if (spinValue == "Bankrupt!") {
 							player2total = 0
 							counter += 1
 							player1turn()
@@ -115,8 +115,11 @@ function gamePlay(wheelRound) {
 				var segValues = [800,700,550,750,600,"Bankrupt!",900,"Loseturn",800,"Bankrupt!",600,950,"Bankrupt!",300,2500,350,"Loseturn",900,600,900,650,800,700,650]
 				spinValue = segValues[segValue-1]
 				document.getElementById("wheelvalue").innerHTML = "<h1>" + spinValue + "</h1>"
+				if (spinValue == "Bankrupt!" || spinValue== "Loseturn") {
+					afterSpin()
+				} else {
 				player()
-			
+				}
 			}
 		})
 		function abet(wheelRound) {	
