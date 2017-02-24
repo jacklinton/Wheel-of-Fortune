@@ -4,6 +4,7 @@ var player1final = 0
 var player2final = 0
 var x
 
+
 function gamePlay(wheelRound) {
 		var roundcount = 1
 		var player1total = 0
@@ -17,8 +18,10 @@ function gamePlay(wheelRound) {
 
 		nextRound(wheelRound)
 		abet(wheelRound)
+		player() 
 
 		function nextRound(wheelRound){
+			console.log(wheelRound)
 			GameBoardBuilder(wheelRound)
 			player()
 		}
@@ -39,23 +42,28 @@ function gamePlay(wheelRound) {
 				document.getElementById("player2total").innerHTML = "<h1>$" + player2total + "</h1>"
 			}
 			function solvePuzzle() {
-				attempt = document.getElementById("solve").value
+				attempt = document.getElementById("solveIt").value
+				attempt = attempt.toUpperCase()
 				if (attempt === wheelRound.win) {
 					if (player1) {
 						player2total = 0
 						player1final += player1total
 						roundcount += 1
+						document.getElementById("player1final").innerHTML = "<p>Player 1 $" + player1final + "</p>"
+						document.getElementById("player2final").innerHTML = "<p>Player 2 $" + player2final + "</p>"
 						if (roundcount<=3){
-						document.getElementById("player1final").innerHTML = "<p>$" + player1final + "</p>"
-						document.getElementById("player2final").innerHTML = "<p>$" + player2final + "</p>"
-						nextRound(("wheelRound"+roundcount))
+							let round = new Play
+							nextRound(round)
 						}
 					} else {
 						player1total = 0
 						player2final += player2total
 						roundcount += 1
+						document.getElementById("player1final").innerHTML = "<p>Player 1 $" + player1final + "</p>"
+						document.getElementById("player2final").innerHTML = "<p>Player 2 $" + player2final + "</p>"
 						if (roundcount<=3){
-						nextRound(("wheelRound"+roundcount))
+							let round = new Play
+							nextRound(round)
 						}
 					}
 				} else {
@@ -122,6 +130,7 @@ function gamePlay(wheelRound) {
 				}
 			}
 		})
+		document.getElementById("solve").addEventListener("click", solvePuzzle)
 		function abet(wheelRound) {	
 	
 			

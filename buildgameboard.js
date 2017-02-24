@@ -12,7 +12,8 @@ function GameBoardBuilder(wheelRound){
 	
 
 	function base(){
-		document.getElementById("underBoxContainer").clear
+		document.getElementById("underBoxContainer").innerHTML = ""
+		document.getElementById("gameBoard").innerHTML = ""
 		for (var i = 0; i < 52; i++) {
 			let theDiv = document.createElement("div")
 			theDiv.setAttribute("class", "under")
@@ -30,6 +31,7 @@ function GameBoardBuilder(wheelRound){
 	}
 
 	function two(){
+		console.log(wheelRound)
 		for (var i = 0; i < wheelRound.line1.length; i++) {
 		let word = wheelRound.line1[i].split("")
 			for (var y = 0; y<=(word.length - 1); y++) {
