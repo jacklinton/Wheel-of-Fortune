@@ -81,25 +81,29 @@
     z-index: 1; }
 
 .puzzleSolve {
-  margin-left: 100px;
-  margin-top: 50px;
-  color: maroon; }
+  position: absolute;
+  color: maroon;
+  left: 50%;
+  bottom: 23%; }
 
 #wheelvalue {
   display: block;
   height: 100px;
   width: 350px;
-  background-color: lightgreen;
+  background-color: green;
   position: absolute;
   top: 51%;
   left: 40%;
   border-color: yellow;
   border-width: 3px;
   border-style: solid;
-  color: darkblue;
+  color: yellow;
   text-align: center; }
 
-#player1total {
+.turn {
+  border-color: red !important; }
+
+#player1totalc {
   display: block;
   height: 100px;
   width: 300px;
@@ -113,7 +117,7 @@
   color: yellow;
   text-align: center; }
 
-#player2total {
+#player2totalc {
   display: block;
   height: 100px;
   width: 300px;
@@ -131,14 +135,14 @@
   display: block;
   height: 100px;
   width: 350px;
-  background-color: lightgreen;
+  background-color: green;
   position: absolute;
   top: 51%;
   right: 5%;
   border-color: yellow;
   border-width: 3px;
   border-style: solid;
-  color: orange;
+  color: yellow;
   text-align: center; }
 
 /*# sourceMappingURL=wordGrid.css.map */

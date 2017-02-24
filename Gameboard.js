@@ -24,6 +24,7 @@ var games = puzzle
 var Play = function() {
 		this.rand = getRandomIntInclusive(0,(games.length-1))
 	    var game = games[this.rand][1]
+	    this.win = game.toUpperCase()
 		this.type = games[this.rand][0]
 		var gameTotal = game.split("")
 		var gameWords = game.split(" ")
@@ -104,6 +105,5 @@ var Play = function() {
 var wheelRound1 = new Play
 var wheelRound2 = new Play
 var wheelRound3 = new Play
-var wheelRound4 = new Play
-var wheelRound5 = new Play
+
 

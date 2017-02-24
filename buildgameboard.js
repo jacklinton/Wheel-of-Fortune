@@ -6,21 +6,13 @@ function GameBoardBuilder(wheelRound){
 	three()
 	four()
 	five()
-	letterBtns()
+	
 
 	document.getElementById("gameType").innerHTML = "<h1>" + "'" + wheelRound.type + "'" + "</h1>"
 	
-	wheelContainer.addEventListener("transitionend", function(){
-		window.setTimeout(function(){
-		theValue()}, 500)
-		function theValue(){
-			var segValues = [800,700,550,750,600,"Bankrupt!",900,"Loseturn",800,"Bankrupt!",600,950,"Bankrupt!",300,2500,350,"Loseturn",900,600,900,650,800,700,650]
-			segment = document.getElementsByClassName("lightup").id
-			document.getElementById("wheelvalue").innerHTML = "<h1>" + segValues[segValue-1] + "</h1><br><h1>" + segValue + "</h1>"
-		}
-	})
 
 	function base(){
+		document.getElementById("underBoxContainer").clear
 		for (var i = 0; i < 52; i++) {
 			let theDiv = document.createElement("div")
 			theDiv.setAttribute("class", "under")
@@ -109,33 +101,7 @@ function GameBoardBuilder(wheelRound){
 			console.log(counter)
 		}
 	}
-
-	var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-
-	function letterBtns(){
-
-		buttons = document.getElementsByClassName("btn")
-
-		for(i=0; i<buttons.length; i++) {
-			buttons = document.getElementsByClassName("btn")
-
-			buttons[i].addEventListener("click", function() {
-				this.style.display = "none"
-				val = this.innerText
-				gameLetters(wheelRound, val)
-			})
-		}
-	}
-
-	function gameLetters(wheelRound, val){
-		chars = document.getElementsByClassName("letter")
-		for (var i = 0; i < chars.length; i++) {
-			if (val === chars[i].innerText) {
-				console.log(val, chars[i].innerText)
-				let abba = chars[i]
-				abba.classList.toggle("hide")
-			}
-		}
-	}
 }
+	
+
 

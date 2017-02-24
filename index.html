@@ -13,22 +13,22 @@
 	<style id="kfr" type="text/css">
 	</style>
 </head>
-<body onload="GameBoardBuilder(wheelRound1)">
+<body onload="gamePlay(wheelRound1)">
 	<div id="mainBody">
-		<div id="player1total">
+		<div id="player1totalc">
 			<div>
-				<p>Player 1</p>
+				<p>Player 1</p><p id="player1final"></p>
 			</div>
-			<div>
+			<div id="player1total">
 				<h1>$0</h1>
 			</div>
 		</div>
-		<div id="player2total">
+		<div id="player2totalc">
 			<div>
-				<p>Player 2</p>
+				<p>Player 2</p><p id="player2final"></p>
 			</div>
-			<div>
-				<h1>$0</h1>
+			<div id="player2total">
+				<h1 >$0</h1>
 			</div>
 		</div>
 		<div class="pointer">
@@ -172,12 +172,13 @@
 	<div class="puzzleSolve" id="puzzleSolve">
 		<form>
 			<label for="solve">Solve the Puzzle!</label>
-			<input type="text" name="solve"> | <button type="button" id="solve">Solve</button>
+			<input type="text" name="solve" id="solve"> | <button type="button" id="solve">Solve</button>
 		</form>
 	</div>
 	<script type="text/javascript" src="scripts2.js"></script>
 	<script type="text/javascript" src="Gameboard.js"></script>
 	<script type="text/javascript" src="buildgameboard.js"></script>
+	<script type="text/javascript" src="gamePlay.js"></script>
 
 </body>
 </html>
